@@ -6,14 +6,21 @@
 
 public class Bug {
   
-  public Bug() { 
+  public Bug(int bugType) { 
     /* This is the bug constructor.*/
-  }
-  
-  public static void main(String[] args) { 
     
+    /*NERD*/
+    
+    /*But cool nerds*/
   }
   
-  /*  */
+  public void charBug(){
+  
+  }
+  
+  public void nomBug(){
+  
+  }
+  
   
 }
