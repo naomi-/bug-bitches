@@ -7,18 +7,9 @@
 public class Bug {
   
   public Bug(int bugType) { 
-    /* This is the bug constructor.*/
     
-    /*NERD*/
+    //NERD
+    
   }
   
-  public void charBug(){
-  
-  }
-  
-  public void nomBug(){
-  
-  }
-  
-  
-}
+ 
