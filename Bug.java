@@ -6,6 +6,7 @@
 
 public class Bug {
   
+<<<<<<< HEAD
   public Bug(int bugType) { 
     
     //NERD
@@ -13,3 +14,19 @@ public class Bug {
   }
   
  
+=======
+  public Bug() { 
+    /* This is the bug constructor.*/
+  }
+  
+  public void charBug(){
+  
+  }
+  
+  public void nomBug(){
+  
+  }
+  
+  
+}
+>>>>>>> refs/remotes/origin/master
