@@ -10,6 +10,8 @@ public class Bug {
     /* This is the bug constructor.*/
     
     /*NERD*/
+    
+    /*But cool nerds*/
   }
   
   public void charBug(){
