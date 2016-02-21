@@ -82,8 +82,12 @@ public class Bug {
     
   }
   
-  public void nomBug(){
-    
+  public static void nomBug(double x, double y){
+    StdDraw.setPenColor(.78, .584, .671);
+    StdDraw.filledCircle(x, y, .13);
+    StdDraw.setPenColor(.431, .161, .278);
+    StdDraw.filledCircle(x, y, .03);
+    StdDraw.filledCircle(x, y+.13, .09);
   }
   
   

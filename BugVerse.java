@@ -31,7 +31,7 @@ public class BugVerse {
     
     //sets up background
     
-    StdDraw.setPenColor(StdDraw.BLUE);
+    StdDraw.setPenColor(.212, .063, .255);
     StdDraw.filledSquare(0, 0, 1);
     
      //main animation loop
@@ -69,8 +69,7 @@ public class BugVerse {
       Bug.charBug(cx, cy);
       
      //Draw the nomBug
-     StdDraw.setPenColor(153, 124, 9);
-     StdDraw.filledCircle(nx, ny, radius);
+      Bug.nomBug(nx, ny);
       
       // display and pause for 20 ms
       StdDraw.show(20); 
