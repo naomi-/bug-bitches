@@ -7,13 +7,12 @@
  */
 public class BugVerse {
   
-  
   public static void main(String[] args) { 
     
     // Adam's code that I straight-up stole
     
     StdDraw.setCanvasSize(500,500);        
-// set the scale of the coordinate system
+    // set the scale of the coordinate system
     StdDraw.setXscale(-1.0, 1.0);
     StdDraw.setYscale(-1.0, 1.0);
     
