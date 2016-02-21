@@ -4,6 +4,13 @@
 
 public class Bug {
   
+  public static int MAXBUGS = 10;
+  public static int numberOfBugs=0;
+  public static int bugsMade=0;
+  public static Bug[] bug = new Bug[MAXBUGS];
+  
+  int bugType = myRand(1,2);
+  
   public Bug(int bugType) { 
     
     if (bugType < ) { // Need to look into how Adam's random number generator works.
@@ -13,7 +20,14 @@ public class Bug {
     }
   }
   
+  Bug() {
+    bugs[bugsMade] = this;
+    bugsMade++;
+    numberOfBugs++;
+  }
+  
   public void charBug(){
+    
     
 //hair
     StdDraw.setPenColor(153, 124, 9);
@@ -45,7 +59,7 @@ public class Bug {
   }
   
   public void nomBug(){
-  
+    
   }
   
   
