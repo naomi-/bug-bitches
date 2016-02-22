@@ -9,17 +9,6 @@ public class Bug {
   public static int bugsMade=0;
   public static Bug[] bugs = new Bug[MAXBUGS];
   
-  int bugType = BugVerse.myRand(1,2);
-  
-  public Bug(int bugType) { 
-    
-    if (bugType < 50) { // Need to look into how Adam's random number generator works.
-      // make charBug
-    } else if (bugType > 50) {// Need to look into how Adam's random number generator works.
-      // make nomBug
-    }
-  }
-  
   Bug() {
     bugs[bugsMade] = this;
     bugsMade++;
@@ -54,11 +43,30 @@ public class Bug {
  
   // BEWARE OF NAOMI-BUG! SHE WILL BITE YOU!
   public static void nomBug(double x, double y){
+
+//hair
+    StdDraw.setPenColor(.671, .502, .635);
+    StdDraw.filledCircle(x, y + .13, .09);
+    
+ // Nombug's fabulous body
     StdDraw.setPenColor(.78, .584, .671);
     StdDraw.filledCircle(x, y, .13);
     StdDraw.setPenColor(.431, .161, .278);
     StdDraw.filledCircle(x, y, .03);
-    StdDraw.filledCircle(x, y+.13, .09);
+    
+//face
+    StdDraw.setPenColor(1.0, .87, .68);
+    StdDraw.filledCircle(x, (y+.13), .06);
+    
+//eyes
+   StdDraw.setPenColor(.55, .66, .44);
+   StdDraw.filledCircle((x - .02), (y + .15), .01);
+   StdDraw.filledCircle((x + .02), (y + .15), .01);
+
+//mouth
+    StdDraw.setPenColor(StdDraw.PINK);
+    StdDraw.filledCircle(x , y + .106 , .012);   
+    
   }
   
   
