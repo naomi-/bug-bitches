@@ -23,7 +23,7 @@ public class BugVerse {
   public static void main(String[] args) { 
     
     
-    StdDraw.setCanvasSize(1000, 1000);        
+    StdDraw.setCanvasSize(500, 500);        
     // set the scale of the coordinate system
     StdDraw.setXscale(-1.0, 1.0);
     StdDraw.setYscale(-1.0, 1.0);
@@ -33,9 +33,6 @@ public class BugVerse {
     
     StdDraw.setPenColor(.212, .063, .255);
     StdDraw.filledSquare(0, 0, 1);
-    
-    //Does this need to be a wav file?
-    StdAudio.play("BugDeath.mp3"); 
     
     //main animation loop
     while (true)  { 
@@ -48,22 +45,20 @@ public class BugVerse {
       if(StdDraw.hasNextKeyTyped()){
         char c = StdDraw.nextKeyTyped();
         if(c=='f'){
-          //up the velocity
+          //up the velocity towards x
           cvx=cvx+.01;
-          cvy=cvy+.01;
           nvx=nvx+.01;
-          nvy=nvy+.01;
         }
         if(c=='s'){
-          cvx=cvx-.01;
-          cvy=cvy-.01;
-          nvx=nvx-.01;
-          nvy=nvy-.01;
+          //up the y axis velocity
+          cvy=cvy+.01;
+          nvy=nvy+.01;
         }
-      }
-      
-      if(StdDraw.mouseX()==nx && StdDraw.mouseY()==ny){
-        StdAudio.play("BugDeath.mp3"); 
+        if(c=='d'){
+          //reset the velocity
+          cvx = 0.015; cvy = 0.023; 
+          nvx = 0.015; nvy = 0.023;
+        }
       }
       
     }
