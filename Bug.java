@@ -27,26 +27,24 @@ public class Bug {
   }
   
   public static void charBug(double x, double y){
-
-//This is StdDraw version
+    
 //hair
-    //StdDraw.setPenColor(153, 124, 9);
-    //StdDraw.setPenColor(StdDraw.PINK);
-    //StdDraw.filledCircle(.200, .116, .090);
-    //StdDraw.filledCircle(.200, .06, .04);
+    StdDraw.setPenColor(.55, .51, .3);
+    StdDraw.filledCircle(x, y + .13, .09);
+    StdDraw.filledCircle(x, y + .2, .04);
     
 //body
     StdDraw.setPenColor(StdDraw.YELLOW);
-    StdDraw.filledCircle(x, y, .2);
+    StdDraw.filledCircle(x, y, .12);
     
 //face
-    StdDraw.setPenColor(StdDraw.BLUE);
-    StdDraw.filledCircle((x+.2), (y+.116), .064);
+    StdDraw.setPenColor(.93, .84, .69);
+    StdDraw.filledCircle(x, (y+.13), .06);
     
 //eyes
-    //StdDraw.setPenColor(StdDraw.BLACK);
-    //StdDraw.filledCircle(.189, .116, .01);
-    //StdDraw.filledCircle(.215, .116, .01);
+   StdDraw.setPenColor(StdDraw.BLACK);
+   StdDraw.filledCircle((x - .01), (y +.120), .01);
+   StdDraw.filledCircle((x + .03), (y + .120), .01);
 
 //mouth
     //StdDraw.setPenColor(StdDraw.GREEN);
