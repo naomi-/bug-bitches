@@ -18,7 +18,7 @@ public class BugVerse {
   public static double onx = 0.230, ony = 0.320;     // old position
   public static double nvx = 0.015, nvy = 0.023;     // velocity
   
-  public static double radius = 0.05;              // radius
+  public static double radius = 0.17;              // radius (originally 0.05)
   
   public static void main(String[] args) { 
     
@@ -45,8 +45,25 @@ public class BugVerse {
         nomMove();
       }
       
+      if(StdDraw.hasNextKeyTyped()){
+        char c = StdDraw.nextKeyTyped();
+        if(c=='f'){
+          //up the velocity
+          cvx=cvx+.01;
+          cvy=cvy+.01;
+          nvx=nvx+.01;
+          nvy=nvy+.01;
+        }
+        if(c=='s'){
+          cvx=cvx-.01;
+          cvy=cvy-.01;
+          nvx=nvx-.01;
+          nvy=nvy-.01;
+        }
+      }
+      
       if(StdDraw.mouseX()==nx && StdDraw.mouseY()==ny){
-       StdAudio.play("BugDeath.mp3"); 
+        StdAudio.play("BugDeath.mp3"); 
       }
       
     }
@@ -62,8 +79,8 @@ public class BugVerse {
     cy = cy + cvy; 
     
     // clear the background for charBug
-    StdDraw.setPenColor(StdDraw.BLUE);
-    StdDraw.filledSquare(ocx, ocy, radius+.01);
+    StdDraw.setPenColor(.212, .063, .255);
+    StdDraw.filledCircle(ocx, ocy, radius+.01);
     ocx = cx;
     ocy = cy;
     
@@ -83,10 +100,10 @@ public class BugVerse {
     // update position for nomBug
     nx = nx + nvx;
     ny = ny + nvy;
-    
+      
     // clear the background for nomBug
-    StdDraw.setPenColor(StdDraw.BLUE);
-    StdDraw.filledSquare(onx, ony, radius+.01);
+    StdDraw.setPenColor(.212, .063, .255);
+    StdDraw.filledCircle(onx, ony, radius+.01);
     onx = nx;
     ony = ny;
     
