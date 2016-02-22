@@ -3,17 +3,6 @@
  */
 
 public class Bug {
-  
-  public static int MAXBUGS = 10;
-  public static int numberOfBugs=0;
-  public static int bugsMade=0;
-  public static Bug[] bugs = new Bug[MAXBUGS];
-  
-  Bug() {
-    bugs[bugsMade] = this;
-    bugsMade++;
-    numberOfBugs++;
-  }
 
 // BEWARE OF CHAR-BUG! SHE WILL STING YOU!  
   public static void charBug(double x, double y){

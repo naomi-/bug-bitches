@@ -31,15 +31,26 @@ public class BugVerse {
     
     //sets up background
     
-    StdDraw.setPenColor(.212, .063, .255);
-    StdDraw.filledSquare(0, 0, 1);
+    //StdDraw.setPenColor(.212, .063, .255);
+    //StdDraw.filledSquare(0, 0, 1);
+    StdDraw.picture(0,0,"bugbackground.png");
+    
+    int counter = 0;
     
     //main animation loop
+    
     while (true)  { 
       
+      counter++;
+      
+      if(counter>3){
+        StdDraw.picture(0,0,"bugbackground.png");
+        counter=0;
+      }
+      
       if(!(StdDraw.mousePressed())){
-        charMove();
         nomMove();
+        charMove();
       }
       
       if(StdDraw.hasNextKeyTyped()){
@@ -59,8 +70,7 @@ public class BugVerse {
           cvx = 0.015; cvy = 0.023; 
           nvx = 0.015; nvy = 0.023;
         }
-      }
-      
+      } 
     }
   }
   
@@ -74,10 +84,10 @@ public class BugVerse {
     cy = cy + cvy; 
     
     // clear the background for charBug
-    StdDraw.setPenColor(.212, .063, .255);
-    StdDraw.filledCircle(ocx, ocy, radius+.01);
-    ocx = cx;
-    ocy = cy;
+    //StdDraw.setPenColor(.212, .063, .255);
+    //StdDraw.filledCircle(ocx, ocy, radius+.01);
+    //ocx = cx;
+    //ocy = cy;
     
     // Draw the charBug
     Bug.charBug(cx, cy);
@@ -97,10 +107,10 @@ public class BugVerse {
     ny = ny + nvy;
       
     // clear the background for nomBug
-    StdDraw.setPenColor(.212, .063, .255);
-    StdDraw.filledCircle(onx, ony, radius+.01);
-    onx = nx;
-    ony = ny;
+    //StdDraw.setPenColor(.212, .063, .255);
+    //StdDraw.filledCircle(onx, ony, radius+.01);
+    //onx = nx;
+    //ony = ny;
     
     //Draw the nomBug
     Bug.nomBug(nx, ny);
