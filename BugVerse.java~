@@ -18,6 +18,11 @@ public class BugVerse {
   public static double onx = 0.230, ony = 0.320;     // old position
   public static double nvx = 0.015, nvy = 0.023;     // velocity
   
+  // initial values for wyBug
+  public static double wx = 0.220, wy = 0.360;     // position
+  public static double owx = 0.380, owy = 0.360;     // old position
+  public static double wvx = 0.015, wvy = 0.023;     // velocity
+  
   public static double radius = 0.17;              // radius (originally 0.05)
   
   public static void main(String[] args) { 
@@ -105,7 +110,7 @@ public class BugVerse {
     // update position for nomBug
     nx = nx + nvx;
     ny = ny + nvy;
-      
+    
     // clear the background for nomBug
     //StdDraw.setPenColor(.212, .063, .255);
     //StdDraw.filledCircle(onx, ony, radius+.01);
@@ -114,6 +119,28 @@ public class BugVerse {
     
     //Draw the nomBug
     Bug.nomBug(nx, ny);
+    
+    // display and pause for 20 ms
+    StdDraw.show(20); 
+  }
+  
+  public static void wyMove(){
+    // bounce off wall according to law of elastic collision for charBug
+    if (Math.abs(wx + wvx) > 1.0 - radius) wvx = -wvx;
+    if (Math.abs(wy + wvy) > 1.0 - radius) wvy = -wvy;
+    
+    // update position for charBug
+    wx = wx + wvx; 
+    wy = wy + wvy; 
+    
+    // clear the background for wyBug
+    //StdDraw.setPenColor(.212, .063, .255);
+    //StdDraw.filledCircle(owx, owy, radius+.01);
+    //owx = wx;
+    //owy = wy;
+    
+    // Draw the wyBug
+    Bug.wyBug(wx, wy);
     
     // display and pause for 20 ms
     StdDraw.show(20); 

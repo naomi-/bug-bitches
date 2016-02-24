@@ -56,6 +56,7 @@ public class BugVerse {
       if(!(StdDraw.mousePressed())){
         nomMove();
         charMove();
+        wyMove();
       }
       
       if(StdDraw.hasNextKeyTyped()){
@@ -89,10 +90,10 @@ public class BugVerse {
     cy = cy + cvy; 
     
     // clear the background for charBug
-    //StdDraw.setPenColor(.212, .063, .255);
-    //StdDraw.filledCircle(ocx, ocy, radius+.01);
-    //ocx = cx;
-    //ocy = cy;
+    // StdDraw.setPenColor(.212, .063, .255);
+    // StdDraw.filledCircle(ocx, ocy, radius+.01);
+    // ocx = cx;
+    // ocy = cy;
     
     // Draw the charBug
     Bug.charBug(cx, cy);
@@ -125,11 +126,10 @@ public class BugVerse {
   }
   
   public static void wyMove(){
-    // bounce off wall according to law of elastic collision for charBug
+    // bounce off wall according to law of elastic collision for wyBug
     if (Math.abs(wx + wvx) > 1.0 - radius) wvx = -wvx;
     if (Math.abs(wy + wvy) > 1.0 - radius) wvy = -wvy;
-    
-    // update position for charBug
+    // update position for wyBug
     wx = wx + wvx; 
     wy = wy + wvy; 
     
