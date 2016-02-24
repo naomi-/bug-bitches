@@ -62,19 +62,24 @@ public class Bug {
   public static void wyBug(double x, double y){
     
 //hair
-    StdDraw.setPenColor(.55, .51, .3);
+    StdDraw.setPenColor(.863, .576, 0);
     StdDraw.filledCircle(x, y + .13, .09);
     
 //body
     StdDraw.setPenColor(.341, .467, .173);
-    StdDraw.filledCircle(x, y, .12);
+    StdDraw.filledCircle(x - .1, y, .12);
+    StdDraw.filledCircle(x - .2, y, .10);
+    StdDraw.filledCircle(x - .3, y, .10);
+    StdDraw.filledCircle(x - .4, y, .8);
+    StdDraw.filledCircle(x - .5, y, .8);
+    StdDraw.filledCircle(x - .6, y, .7);
     
 //face
-    StdDraw.setPenColor(1.0, .96, .93);
-    StdDraw.filledCircle(x, (y+.13), .06);
+    StdDraw.setPenColor(.945, 0.08, .733);
+    StdDraw.filledCircle(x, (y+.15), .05);
     
 //eyes
-   StdDraw.setPenColor(.48, .25, .0);
+   StdDraw.setPenColor(.02, .573, .729);
    StdDraw.filledCircle((x - .02), (y + .15), .01);
    StdDraw.filledCircle((x + .02), (y + .15), .01);
    

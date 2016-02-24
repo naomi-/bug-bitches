@@ -1,5 +1,5 @@
 /**
- * Bug Class: Creates charBug and nomBug objects.
+ * Bug Class: Creates bugSquad objects.
  */
 
 public class Bug {
@@ -57,6 +57,27 @@ public class Bug {
     StdDraw.filledCircle(x , y + .106 , .012);   
     
   }
-  
+
+// WYBUG IS HARMLESS  
+  public static void wyBug(double x, double y){
+    
+//hair
+    StdDraw.setPenColor(.55, .51, .3);
+    StdDraw.filledCircle(x, y + .13, .09);
+    
+//body
+    StdDraw.setPenColor(.341, .467, .173);
+    StdDraw.filledCircle(x, y, .12);
+    
+//face
+    StdDraw.setPenColor(1.0, .96, .93);
+    StdDraw.filledCircle(x, (y+.13), .06);
+    
+//eyes
+   StdDraw.setPenColor(.48, .25, .0);
+   StdDraw.filledCircle((x - .02), (y + .15), .01);
+   StdDraw.filledCircle((x + .02), (y + .15), .01);
+   
+  }
   
 }
