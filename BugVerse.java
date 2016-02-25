@@ -62,11 +62,6 @@ public class BugVerse {
           Bug.drawBugs();
         }
         
-        //kill bugs on user click
-        if(StdDraw.mousePressed()){
-        
-        }
-        
         //accept user input and act accordingly (make bugs, change bug movement, change the background)
         if(StdDraw.hasNextKeyTyped()){
           char c = StdDraw.nextKeyTyped();
