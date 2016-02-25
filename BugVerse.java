@@ -8,30 +8,6 @@
 
 public class BugVerse {
   
-  //initial values for velocity
-  public static double vx = 0.015, vy = 0.023;     // velocity
-  
-  // initial values for charBug
-  public static double cx = 0.320, cy = 0.860;     // position
-  public static double ocx = 0.480, ocy = 0.860;     // old position
-  
-  // initial values for nomBug
-  public static double nx = 0.480, ny = 0.100;     // position
-  public static double onx = 0.230, ony = 0.320;     // old position
-  
-  // initial values for wyBug
-  public static double wx = 0.111, wy = 0.111;     // position
-  public static double owx = 0.9, owy = 0.9;     // old position
-  
-  // initial values for basBug
-  public static double bx = 0.6, by = 0.3;     // position
-  public static double obx = 0.3, oby = 0.6;     // old position
-  
-  // initial values for adBug
-  public static double ax = 0.8, ay = 0.2;     // position
-  public static double oax = 0.5, oay = 0.1;     // old position
-  
-  public static double radius = 0.17;              // radius (originally 0.05)
   
   public static void main(String[] args) { 
     
@@ -47,13 +23,19 @@ public class BugVerse {
     char play = ' ';
     
     StdDraw.setPenColor(StdDraw.BLACK);
-    StdDraw.text(0,0,"Welcome to the world of bugs! If you're ready to start, press p.");
+    StdDraw.text(0,.4,"Welcome to the world of bugs!");
+    StdDraw.text(0,.3, "Use the number keys from 1 - 5 to make bugs.");
+    StdDraw.text(0,.2, "Press 6 to kill a bug.");
+    StdDraw.text(0,.1, "The b key takes you to a new bug world.");
+    StdDraw.text(0, 0, "The f, d, and s keys make the bugs move in different ways.");
+    StdDraw.text(0,-.1,"Click your mouse to pause the game.");
+    StdDraw.text(0,-.2,"Press p if you're ready to start!");
     
     //sets up background
     int bgCounter = 0;
     String background = "bugbackground2.png";
     
-    while(play==' '){
+    while(play!='p'){
     if(StdDraw.hasNextKeyTyped()){
       play = StdDraw.nextKeyTyped();
     }
@@ -69,33 +51,61 @@ public class BugVerse {
         
         counter++;
         
+        //clear the trails
         if(counter>3){
           StdDraw.picture(0,0, background);
           counter=0;
         }
         
+        //pause if the mouse is pressed
         if(!(StdDraw.mousePressed())){
-          nomMove();
-          charMove();
-          wyMove();
-          basMove();
-          adMove();
+          Bug.drawBugs();
         }
         
+        //kill bugs on user click
+        if(StdDraw.mousePressed()){
+        
+        }
+        
+        //accept user input and act accordingly (make bugs, change bug movement, change the background)
         if(StdDraw.hasNextKeyTyped()){
           char c = StdDraw.nextKeyTyped();
+          if(c=='1'){
+            //Make a new charBug
+            Bug newBug = new Bug(1);
+          }
+          if(c=='2'){
+            //Make a new nomBug
+            Bug newBug = new Bug(2);
+          }
+          if(c=='3'){
+            //Make a new wyBug
+            Bug newBug = new Bug(3);
+          }
+          if(c=='4'){
+            //Make a new basBug
+            Bug newBug = new Bug(4);
+          }
+          if(c=='5'){
+            //Make a new adBug
+            Bug newBug = new Bug(5);
+          }
+          if(c=='6'){
+            Bug.bugsMade--;
+            StdAudio.play("bugdeath.wav");
+          }
           if(c=='f'){
-            //let's go horizontal!
-            vx = vx+0.01; vy=0.0;
+            //let's go faster!
+            Bug.vx = Bug.vx+0.01; Bug.vy=0.01;
             
           }
           if(c=='s'){
-            //let's go vertical!
-            vx = 0.00; vy = 0.01;
+            //let's go slower!
+            Bug.vx = Bug.vx-0.01; Bug.vy = Bug.vy-0.01;
           }
           if(c=='d'){
             //reset the velocity
-            vx = 0.015; vy = 0.023; 
+            Bug.vx = 0.015; Bug.vy = 0.023; 
           }
           if(c=='b'){
             if(bgCounter%2==0){
@@ -112,84 +122,7 @@ public class BugVerse {
     
   }
   
-  public static void charMove(){
-    // bounce off wall according to law of elastic collision for charBug
-    if (Math.abs(cx + vx) > 1.0 - radius) vx = -vx;
-    if (Math.abs(cy + vy) > 1.0 - radius) vy = -vy;
-    
-    // update position for charBug
-    cx = cx + vx; 
-    cy = cy + vy; 
-    
-    // Draw the charBug
-    Bug.charBug(cx, cy);
-    
-    // display and pause for 20 ms
-    StdDraw.show(20); 
-  }
   
-  public static void nomMove(){
-    
-    // bounce off wall according to law of elastic collision for nomBug
-    if (Math.abs(nx + vx) > 1.0 - radius) vx = -vx;
-    if (Math.abs(ny + vy) > 1.0 - radius) vy = -vy;
-    
-    // update position for nomBug
-    nx = nx + vx;
-    ny = ny + vy;
-    
-    //Draw the nomBug
-    Bug.nomBug(nx, ny);
-    
-    // display and pause for 20 ms
-    StdDraw.show(20); 
-  }
-  
-  public static void wyMove(){
-    // bounce off wall according to law of elastic collision for wyBug
-    if (Math.abs(wx + vx) > 1.0 - radius) vx = -vx;
-    if (Math.abs(wy + vy) > 1.0 - radius) vy = -vy;
-    // update position for wyBug
-    wx = wx + vx; 
-    wy = wy + vy; 
-    
-    // Draw the wyBug
-    Bug.wyBug(wx, wy);
-    
-    // display and pause for 20 ms
-    StdDraw.show(20); 
-  }
-  
-  public static void basMove(){
-    // bounce off wall according to law of elastic collision for basBug
-    if (Math.abs(bx + vx) > 1.0 - radius) vx = -vx;
-    if (Math.abs(by + vy) > 1.0 - radius) vy = -vy;
-    // update position for basBug
-    bx = bx + vx; 
-    by = by + vy; 
-    
-    // Draw the basBug
-    Bug.basBug(bx, by);
-    
-    // display and pause for 20 ms
-    StdDraw.show(20); 
-  }
-  
-    
-  public static void adMove(){
-    // bounce off wall according to law of elastic collision for adBug
-    if (Math.abs(ax + vx) > 1.0 - radius) vx = -vx;
-    if (Math.abs(ay + vy) > 1.0 - radius) vy = -vy;
-    // update position for adBug
-    ax = ax + vx; 
-    ay = ay + vy; 
-    
-    // Draw the adBug
-    Bug.adBug(ax, ay);
-    
-    // display and pause for 20 ms
-    StdDraw.show(20); 
-  }
   
   
 // Adam's Random Number Generator  

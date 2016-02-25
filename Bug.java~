@@ -8,7 +8,7 @@ public class Bug {
   public static void charBug(double x, double y){
     
 //hair
-    StdDraw.setPenColor(.976, .878, .812);
+    StdDraw.setPenColor(.694, .592, .102);
     StdDraw.filledCircle(x, y + .13, .09);
     StdDraw.filledCircle(x, y + .2, .04);
     
@@ -40,7 +40,7 @@ public class Bug {
     StdDraw.setPenColor(.671, .502, .635);
     StdDraw.filledCircle(x, y + .13, .09);
     
-    // Nombug's fabulous body
+// Nombug's fabulous body
     StdDraw.setPenColor(.78, .584, .671);
     StdDraw.filledCircle(x, y, .13);
     StdDraw.setPenColor(.431, .161, .278);
@@ -121,7 +121,7 @@ public class Bug {
     StdDraw.filledCircle(x + .6, y, .06);
     
 //hair
-    StdDraw.setPenColor(.001, .898, .004);
+    StdDraw.setPenColor(1.0, .898, .4);
     StdDraw.filledCircle(x, y + .13, .09);
     StdDraw.filledCircle(x, y + .2, .04);
     
@@ -154,7 +154,7 @@ public class Bug {
     StdDraw.filledCircle(x, y, .03);
  
 //face
-    StdDraw.setPenColor(.001, .776, .565);
+    StdDraw.setPenColor(1.0, .87, .68);
     StdDraw.filledCircle(x, (y+.15), .05);
     
 //eyes
