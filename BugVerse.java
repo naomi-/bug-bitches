@@ -65,16 +65,19 @@ public class BugVerse {
           //up the velocity towards x
           cvx=cvx+.01;
           nvx=nvx+.01;
+          wvx=wvx+.01;
         }
         if(c=='s'){
           //up the y axis velocity
           cvy=cvy+.01;
           nvy=nvy+.01;
+          wvy=wvy+.01;
         }
         if(c=='d'){
           //reset the velocity
           cvx = 0.015; cvy = 0.023; 
           nvx = 0.015; nvy = 0.023;
+          wvx = 0.015; wvy = 0.023;
         }
       } 
     }
@@ -88,12 +91,6 @@ public class BugVerse {
     // update position for charBug
     cx = cx + cvx; 
     cy = cy + cvy; 
-    
-    // clear the background for charBug
-    // StdDraw.setPenColor(.212, .063, .255);
-    // StdDraw.filledCircle(ocx, ocy, radius+.01);
-    // ocx = cx;
-    // ocy = cy;
     
     // Draw the charBug
     Bug.charBug(cx, cy);
@@ -112,12 +109,6 @@ public class BugVerse {
     nx = nx + nvx;
     ny = ny + nvy;
     
-    // clear the background for nomBug
-    //StdDraw.setPenColor(.212, .063, .255);
-    //StdDraw.filledCircle(onx, ony, radius+.01);
-    //onx = nx;
-    //ony = ny;
-    
     //Draw the nomBug
     Bug.nomBug(nx, ny);
     
@@ -132,12 +123,6 @@ public class BugVerse {
     // update position for wyBug
     wx = wx + wvx; 
     wy = wy + wvy; 
-    
-    // clear the background for wyBug
-    //StdDraw.setPenColor(.212, .063, .255);
-    //StdDraw.filledCircle(owx, owy, radius+.01);
-    //owx = wx;
-    //owy = wy;
     
     // Draw the wyBug
     Bug.wyBug(wx, wy);
