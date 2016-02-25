@@ -60,13 +60,12 @@ public class BugVerse {
       if(StdDraw.hasNextKeyTyped()){
         char c = StdDraw.nextKeyTyped();
         if(c=='f'){
-          //up the velocity towards x
-          vx=vx+.01;
-          //decrease velocity towards y
+          //let's go horizontal!
+          vx = 0.02; vy=0.0;
         }
         if(c=='s'){
-          //up the y axis velocity
-          vy=vy+.01;
+          //let's go vertical!
+          vx = 0.0; vy = 0.02;
         }
         if(c=='d'){
           //reset the velocity
