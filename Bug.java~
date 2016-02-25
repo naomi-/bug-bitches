@@ -30,7 +30,10 @@ public class Bug {
     StdDraw.filledCircle(x , y + .106 , .012);    
   }
   
-  // BEWARE OF NAOMI-BUG! SHE WILL BITE YOU!
+  
+  
+  
+// BEWARE OF NAOMI-BUG! SHE WILL BITE YOU!
   public static void nomBug(double x, double y){
     
 //Naomi wanted purple hair
@@ -90,11 +93,13 @@ public class Bug {
 //eyes
     StdDraw.setPenColor(.02, .573, .729);
     StdDraw.filledCircle((x - .02), (y + .15), .01);
-    StdDraw.filledCircle((x + .02), (y + .15), .01);
-    
+    StdDraw.filledCircle((x + .02), (y + .15), .01);  
   }
   
-// NOMBUG LIKES BASBUG  
+  
+  
+  
+// BASBUG ISN'T EVEN IN CSF (YET)!  
   public static void basBug(double x, double y){
 //body
     StdDraw.setPenColor(.129, .047, .596);
@@ -125,10 +130,38 @@ public class Bug {
     StdDraw.filledCircle(x, (y+.15), .05);
     
 //eyes
-    StdDraw.setPenColor(.02, .573, .729);
+    StdDraw.setPenColor(.227, .18, .827);
     StdDraw.filledCircle((x - .02), (y + .15), .01);
     StdDraw.filledCircle((x + .02), (y + .15), .01);
     
   }  
+  
+  
+  
+  
+  
+// ADBUG IS A WISE AND COOL PROFESSOR THAT LIKES ALIENS
+  public static void adBug(double x, double y){
+    
+//hair
+    StdDraw.setPenColor(.118, .09, .063);
+    StdDraw.filledCircle(x, y + .13, .09);
+    
+ //body
+    StdDraw.setPenColor(.118, .114, .133);
+    StdDraw.filledCircle(x, y, .13);
+    StdDraw.setPenColor(.227, .18, .827);
+    StdDraw.filledCircle(x, y, .03);
+ 
+//face
+    StdDraw.setPenColor(.001, .776, .565);
+    StdDraw.filledCircle(x, (y+.15), .05);
+    
+//eyes
+    StdDraw.setPenColor(.48, .25, .0);
+    StdDraw.filledCircle((x - .02), (y + .15), .01);
+    StdDraw.filledCircle((x + .02), (y + .15), .01); 
+    
+  }
   
 }
