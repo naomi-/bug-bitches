@@ -50,8 +50,8 @@ public class BugVerse {
     StdDraw.text(0,0,"Welcome to the world of bugs! If you're ready to start, press p.");
     
     //sets up background
+    int bgCounter = 0;
     String background = "bugbackground2.png";
-   
     
     while(play==' '){
     if(StdDraw.hasNextKeyTyped()){
@@ -86,18 +86,25 @@ public class BugVerse {
           char c = StdDraw.nextKeyTyped();
           if(c=='f'){
             //let's go horizontal!
-            vx = 0.02; vy=0.0;
+            vx = vx+0.01; vy=0.0;
+            
           }
           if(c=='s'){
             //let's go vertical!
-            vx = 0.0; vy = 0.02;
+            vx = 0.00; vy = 0.01;
           }
           if(c=='d'){
             //reset the velocity
             vx = 0.015; vy = 0.023; 
           }
-          if (c == 'b') {
-            background = "bugbackground.png";
+          if(c=='b'){
+            if(bgCounter%2==0){
+              background = "bugbackground.png";
+              bgCounter++;
+            }else{
+              background = "bugbackground2.png";
+              bgCounter++;
+            }
           }
         } 
       }

@@ -51,6 +51,7 @@ public class BugVerse {
     
     //sets up background
     String background = "bugbackground2.png";
+   
     
     while(play==' '){
     if(StdDraw.hasNextKeyTyped()){
@@ -94,6 +95,9 @@ public class BugVerse {
           if(c=='d'){
             //reset the velocity
             vx = 0.015; vy = 0.023; 
+          }
+          if (c == 'b') {
+            background = "bugbackground.png";
           }
         } 
       }
