@@ -38,7 +38,7 @@ public class BugVerse {
     
     //StdDraw.setPenColor(.212, .063, .255);
     //StdDraw.filledSquare(0, 0, 1);
-    StdDraw.picture(0,0,"bugbackground.png");
+    StdDraw.picture(0,0,"bugbackground2.png");
     
     int counter = 0;
     
@@ -49,7 +49,7 @@ public class BugVerse {
       counter++;
       
       if(counter>3){
-        StdDraw.picture(0,0,"bugbackground.png");
+        StdDraw.picture(0,0,"bugbackground2.png");
         counter=0;
       }
       
