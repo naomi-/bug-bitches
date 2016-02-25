@@ -3,10 +3,6 @@
  */
 
 public class Bug {
-
-  public static double cx = 0.320, cy = 0.860;     // position
-  public static double ocx = 0.480, ocy = 0.860;     // old position
-  public static double cvx = 0.015, cvy = 0.023;     // velocity
   
 // BEWARE OF CHAR-BUG! SHE WILL STING YOU!  
   public static void charBug(double x, double y){
