@@ -27,52 +27,68 @@ public class BugVerse {
   
   public static void main(String[] args) { 
     
-    
     StdDraw.setCanvasSize(500, 500);        
     // set the scale of the coordinate system
     StdDraw.setXscale(-1.0, 1.0);
     StdDraw.setYscale(-1.0, 1.0);
     
+    //Give instructions to viewer
+    StdDraw.setPenColor(StdDraw.WHITE);
+    StdDraw.filledSquare(0,0,250);
+    
+    char play = ' ';
+    
+    StdDraw.setPenColor(StdDraw.BLACK);
+    StdDraw.text(0,0,"Welcome to the world of bugs! If you're ready to start, press p.");
     
     //sets up background
     String background = "bugbackground2.png";
-    StdDraw.picture(0,0, background);
+    
+    while(play==' '){
+    if(StdDraw.hasNextKeyTyped()){
+      play = StdDraw.nextKeyTyped();
+    }
+    }
     
     int counter = 0;
     
-    //main animation loop
-    
-    while (true)  { 
+    if(play=='p'){
+      //let's play!
       
-      counter++;
-      
-      if(counter>3){
-        StdDraw.picture(0,0, background);
-        counter=0;
+      //main animation loop
+      while (true)  { 
+        
+        counter++;
+        
+        if(counter>3){
+          StdDraw.picture(0,0, background);
+          counter=0;
+        }
+        
+        if(!(StdDraw.mousePressed())){
+          nomMove();
+          charMove();
+          wyMove();
+        }
+        
+        if(StdDraw.hasNextKeyTyped()){
+          char c = StdDraw.nextKeyTyped();
+          if(c=='f'){
+            //let's go horizontal!
+            vx = 0.02; vy=0.0;
+          }
+          if(c=='s'){
+            //let's go vertical!
+            vx = 0.0; vy = 0.02;
+          }
+          if(c=='d'){
+            //reset the velocity
+            vx = 0.015; vy = 0.023; 
+          }
+        } 
       }
-      
-      if(!(StdDraw.mousePressed())){
-        nomMove();
-        charMove();
-        wyMove();
-      }
-      
-      if(StdDraw.hasNextKeyTyped()){
-        char c = StdDraw.nextKeyTyped();
-        if(c=='f'){
-          //let's go horizontal!
-          vx = 0.02; vy=0.0;
-        }
-        if(c=='s'){
-          //let's go vertical!
-          vx = 0.0; vy = 0.02;
-        }
-        if(c=='d'){
-          //reset the velocity
-          vx = 0.015; vy = 0.023; 
-        }
-      } 
     }
+    
   }
   
   public static void charMove(){
