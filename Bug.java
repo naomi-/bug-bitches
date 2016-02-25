@@ -4,7 +4,7 @@
 
 public class Bug {
   
-  public static int maxbugs = 10; 
+  public static int maxbugs = 1000; 
   public static Bug[] bugs = new Bug[maxbugs];
   public static int bugsMade=0;
   
@@ -18,8 +18,8 @@ public class Bug {
   public static double ocx = 0.480, ocy = 0.860;     // old position
   
   // initial values for nomBug
-  public static double nx = 0.420, ny = 0.960;     // position
-  public static double onx = 0.580, ony = 0.960;     // old position
+  public static double nx = 0.420, ny = 0.160;     // position
+  public static double onx = 0.580, ony = 0.160;     // old position
   
   // initial values for wyBug
   public static double wx = 0.220, wy = 0.760;     // position
