@@ -20,8 +20,16 @@ public class BugVerse {
   public static double onx = 0.230, ony = 0.320;     // old position
   
   // initial values for wyBug
-  public static double wx = 0.220, wy = 0.360;     // position
-  public static double owx = 0.380, owy = 0.360;     // old position
+  public static double wx = 0.111, wy = 0.111;     // position
+  public static double owx = 0.9, owy = 0.9;     // old position
+  
+  // initial values for basBug
+  public static double bx = 0.6, by = 0.3;     // position
+  public static double obx = 0.3, oby = 0.6;     // old position
+  
+  // initial values for adBug
+  public static double ax = 0.8, ay = 0.2;     // position
+  public static double oax = 0.5, oay = 0.1;     // old position
   
   public static double radius = 0.17;              // radius (originally 0.05)
   
@@ -69,6 +77,8 @@ public class BugVerse {
           nomMove();
           charMove();
           wyMove();
+          basMove();
+          adMove();
         }
         
         if(StdDraw.hasNextKeyTyped()){
@@ -134,6 +144,37 @@ public class BugVerse {
     
     // Draw the wyBug
     Bug.wyBug(wx, wy);
+    
+    // display and pause for 20 ms
+    StdDraw.show(20); 
+  }
+  
+  public static void basMove(){
+    // bounce off wall according to law of elastic collision for basBug
+    if (Math.abs(bx + vx) > 1.0 - radius) vx = -vx;
+    if (Math.abs(by + vy) > 1.0 - radius) vy = -vy;
+    // update position for basBug
+    bx = bx + vx; 
+    by = by + vy; 
+    
+    // Draw the basBug
+    Bug.basBug(bx, by);
+    
+    // display and pause for 20 ms
+    StdDraw.show(20); 
+  }
+  
+    
+  public static void adMove(){
+    // bounce off wall according to law of elastic collision for adBug
+    if (Math.abs(ax + vx) > 1.0 - radius) vx = -vx;
+    if (Math.abs(ay + vy) > 1.0 - radius) vy = -vy;
+    // update position for adBug
+    ax = ax + vx; 
+    ay = ay + vy; 
+    
+    // Draw the adBug
+    Bug.adBug(ax, ay);
     
     // display and pause for 20 ms
     StdDraw.show(20); 
