@@ -8,12 +8,12 @@ public class Bug {
   public static void charBug(double x, double y){
     
 //hair
-    StdDraw.setPenColor(.55, .51, .3);
+    StdDraw.setPenColor(.976, .878, .812);
     StdDraw.filledCircle(x, y + .13, .09);
     StdDraw.filledCircle(x, y + .2, .04);
     
 //body
-    StdDraw.setPenColor(.341, .467, .173);
+    StdDraw.setPenColor(.533, 0, .224);
     StdDraw.filledCircle(x, y, .12);
     
 //face
@@ -121,7 +121,7 @@ public class Bug {
     StdDraw.filledCircle(x + .6, y, .06);
     
 //hair
-    StdDraw.setPenColor(.001, .855, .565);
+    StdDraw.setPenColor(.001, .898, .004);
     StdDraw.filledCircle(x, y + .13, .09);
     StdDraw.filledCircle(x, y + .2, .04);
     
